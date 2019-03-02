@@ -52,7 +52,7 @@ Python 3, because I had downloaded it for another course a while back; plus, fro
 
 In the Terminal:
 
-Python 3.1
+Python 3.1.7
 
 
  
