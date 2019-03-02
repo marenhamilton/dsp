@@ -50,8 +50,6 @@ Did you install Python 2 or 3? Why?
 Python 3, because I had downloaded it for another course a while back; plus, from what people who know better than I have said, it is the more used version now anyways.  
 ### Q2. Which Python Version Installed   
 
-In the Terminal:
-
 Python 3.1.7
 
 
