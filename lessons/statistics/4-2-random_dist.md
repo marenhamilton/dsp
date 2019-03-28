@@ -22,7 +22,7 @@ plt.plot(sampleCDF.keys(),sampleCDFy.values())
 #once (at most twice), so you end up with an uninformative barcode-style
 #graph, or you have to set bins in order to capture the data better
 
-#the CDF, however, shows that the distribution is normal cleanly
+#the CDF, however, cleanly shows that the distribution is normal
 
 #graphs returned vary between tests; I will not attach them
 ```
