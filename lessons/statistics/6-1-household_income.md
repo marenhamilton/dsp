@@ -19,12 +19,19 @@ def pears_skew(xs) :
     mean = raw_moment(xs,1)
     std = (centre_moment(xs,2))**.5
     return 3*(mean-median)/std
+def percentile_rank(xs,max_x) :
+    count=0
+    for x in xs :
+        if x<=max_x:
+            count+=1
+    rank = 100*count/len(xs)
+    return rank
 
 median = round(cdf.Value(.5),2)
 mean = round(raw_moment(sample,1),2)
 skewness = round(skewness(sample),2)
 p_skew = round(pears_skew(sample),2)
-b_mean = .66
+b_mean = round(percentile_rank(sample,mean),2)
 print(f'Median = {median}\nMean = {mean}\nSkewness = {skewness}\n'
       f'Pearson Skewness = {p_skew}\nPercent below the mean : {b_mean}')
       
@@ -33,7 +40,7 @@ print(f'Median = {median}\nMean = {mean}\nSkewness = {skewness}\n'
 #Mean = 74278.71
 #Skewness = 4.95
 #Pearson Skewness = 0.74
-#Percent below the mean : 0.66
+#Percent below the mean : 66.0
 
 
 
