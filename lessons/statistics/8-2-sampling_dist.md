@@ -16,8 +16,6 @@ def EstimateExp(n,m,lam) :
         xbar = np.mean(xs)
         means.append(xbar)
     return means
-def StdErr(actual,estimates) :
-    return RMSE(actual,estimates)
 def CI(lower,upper,estimates) :
     return (round(np.percentile(estimates,lower),2),round(np.percentile(estimates,upper),2))
 def nexperiment(n_lst):
@@ -26,7 +24,7 @@ def nexperiment(n_lst):
     std_errs = []
     for n in n_lst :
         expmeans = EstimateExp(n,m,lam)
-        std_errs.append(StdErr(lam,expmeans))
+        std_errs.append(RMSE(lam,expmeans))
     plt.plot(n_lst,std_errs)
     
 
@@ -42,7 +40,7 @@ plt.xlabel('sample mean')
 plt.ylabel('CDF')
 plt.title('Sampling Distribution')
 plt.show()
-stderr = StdErr(lam,means)
+stderr = RMSE(lam,means)
 ci = CI(5,95,means)
 print(f'The standard error is {stderr}.\nThe 90% confidence inverval is {ci}.\n\n\n')
 
