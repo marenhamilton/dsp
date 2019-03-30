@@ -4,9 +4,7 @@
 class DiffMeansResample(DiffMeansPermute) :
     
     def RunModel(self) :
-        mu = np.mean(self.pool)
-        sigma = np.std(self.pool)
-        resample = np.random.normal(loc=mu,scale=sigma,size=len(self.pool))
+        resample = np.random.choice(self.pool,size=len(self.pool),replace=True)
         return resample
 
 dataln = firsts.prglngth.values, others.prglngth.values
